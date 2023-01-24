@@ -13,6 +13,15 @@ public class SwingControlDemo implements ActionListener {
     private JTextArea ta;
     private int WIDTH=800;
     private int HEIGHT=700;
+    // second frame
+    private JFrame secondFrame;
+    private JLabel topLabel;
+    private JMenuBar menus;
+    private JMenu study, code, other;
+    private JMenuItem chomp, swing;
+    private JTextArea typebox;
+    private int W=500;
+    private int H=300;
 
 
     public SwingControlDemo() {
@@ -28,7 +37,10 @@ public class SwingControlDemo implements ActionListener {
         mainFrame = new JFrame("Java SWING Examples");
         mainFrame.setSize(WIDTH, HEIGHT);
         mainFrame.setLayout(new GridLayout(3, 1));
-
+//2nd
+        secondFrame=new JFrame("SWING trial");
+        secondFrame.setSize(W,H);
+        secondFrame.setLayout(new FlowLayout());
 
         cut = new JMenuItem("cut");
         copy = new JMenuItem("copy");
@@ -38,6 +50,9 @@ public class SwingControlDemo implements ActionListener {
         copy.addActionListener(this);
         paste.addActionListener(this);
         selectAll.addActionListener(this);
+//2nd
+        chomp = new JMenuItem("chomp");
+        swing = new JMenuItem("swing");
 
         mb = new JMenuBar();
         file = new JMenu("File");
@@ -50,12 +65,24 @@ public class SwingControlDemo implements ActionListener {
         mb.add(file);
         mb.add(edit);
         mb.add(help);
+//2nd
+    menus= new JMenuBar();
+    study = new JMenu("Study");
+    code = new JMenu("Code");
+    other = new JMenu("Other");
+
 
         ta = new JTextArea();
         ta.setBounds(50, 5, WIDTH-100, HEIGHT-50);
         mainFrame.add(mb);
         mainFrame.add(ta);
         mainFrame.setJMenuBar(mb);
+//2nd
+    typebox = new JTextArea();
+    typebox.setBounds(50,5,50,50);
+    secondFrame.add(menus);
+    secondFrame.add(typebox);
+    secondFrame.setJMenuBar(menus);
 
         headerLabel = new JLabel("", JLabel.CENTER);
         statusLabel = new JLabel("", JLabel.CENTER);
@@ -73,6 +100,8 @@ public class SwingControlDemo implements ActionListener {
         mainFrame.add(controlPanel);
         mainFrame.add(statusLabel);
         mainFrame.setVisible(true);
+ //2nd
+    secondFrame.setVisible(true);
     }
 
     private void showEventDemo() {
