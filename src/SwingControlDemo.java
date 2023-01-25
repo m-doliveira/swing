@@ -17,20 +17,65 @@ public class SwingControlDemo implements ActionListener {
     private JFrame secondFrame;
     private JLabel topLabel;
     private JMenuBar menus;
+    private JPanel pan;
     private JMenu study, code, other;
     private JMenuItem chomp, swing;
     private JTextArea typebox;
     private int W=500;
     private int H=300;
+    // problem a
+    private JFrame problemA;
+    private int Wa=500;
+    private int Ha=300;
+    // problem b
+    private JFrame problemB;
+    private int Wb=500;
+    private int Hb=300;
+    //problem c
+    private JFrame problemC;
+    private int Wc=500;
+    private int Hc=300;
 
 
     public SwingControlDemo() {
-        prepareGUI();
+      //  prepareGUI();
+        prepareGUI2();
+    //   prepareGUI3();
     }
 
     public static void main(String[] args) {
         SwingControlDemo swingControlDemo = new SwingControlDemo();
-        swingControlDemo.showEventDemo();
+     //   swingControlDemo.showEventDemo();
+        swingControlDemo.showEventDemo2();
+     //   swingControlDemo.showEventDemo3();
+    }
+    private void prepareGUI3(){
+// put grid on panel and panel in center
+    }
+    private void showEventDemo3(){
+
+    }
+
+    private void prepareGUI2(){
+        problemB=new JFrame("problem B");
+        problemB.setSize(Wa,Ha);
+        problemB.setLayout(new BorderLayout());
+        problemB.setVisible(true);
+    }
+    private void showEventDemo2() {
+        JButton oneBButton = new JButton("1");
+        JButton twoBButton = new JButton("2");
+        JButton threeBButton = new JButton("3");
+        JButton fourBButton = new JButton("4");
+        JButton fiveBButton = new JButton("5");
+
+        problemB.add(oneBButton, BorderLayout.NORTH);
+        problemB.add(twoBButton, BorderLayout.EAST);
+        problemB.add(threeBButton, BorderLayout.SOUTH);
+        problemB.add(fourBButton, BorderLayout.WEST);
+        problemB.add(fiveBButton, BorderLayout.CENTER);
+        problemB.setVisible(true);
+
     }
 
     private void prepareGUI() {
@@ -41,6 +86,10 @@ public class SwingControlDemo implements ActionListener {
         secondFrame=new JFrame("SWING trial");
         secondFrame.setSize(W,H);
         secondFrame.setLayout(new FlowLayout());
+//problem a
+        problemA=new JFrame("problem A");
+        problemA.setSize(Wa,Ha);
+        problemA.setLayout(new GridLayout(2, 3));
 
         cut = new JMenuItem("cut");
         copy = new JMenuItem("copy");
@@ -78,8 +127,8 @@ public class SwingControlDemo implements ActionListener {
         mainFrame.add(ta);
         mainFrame.setJMenuBar(mb);
 //2nd
-    typebox = new JTextArea();
-    typebox.setBounds(50,5,50,50);
+    typebox = new JTextArea("poej");
+    typebox.setBounds(50,5,10,10);
     secondFrame.add(menus);
     secondFrame.add(typebox);
     secondFrame.setJMenuBar(menus);
@@ -101,7 +150,10 @@ public class SwingControlDemo implements ActionListener {
         mainFrame.add(statusLabel);
         mainFrame.setVisible(true);
  //2nd
-    secondFrame.setVisible(true);
+        pan= new JPanel();
+        pan.setLayout(new FlowLayout());
+       // secondFrame.add(pan);
+        secondFrame.setVisible(true);
     }
 
     private void showEventDemo() {
@@ -110,6 +162,12 @@ public class SwingControlDemo implements ActionListener {
         JButton okButton = new JButton("OK");
         JButton submitButton = new JButton("Submit");
         JButton cancelButton = new JButton("Cancel");
+        // problem a
+        JButton oneAButton = new JButton("1");
+        JButton twoAButton = new JButton("2");
+        JButton threeAButton = new JButton("3");
+        JButton fourAButton = new JButton("4");
+        JButton fiveAButton = new JButton("5");
 
         okButton.setActionCommand("OK");
         submitButton.setActionCommand("Submit");
@@ -122,8 +180,16 @@ public class SwingControlDemo implements ActionListener {
         controlPanel.add(okButton);
         controlPanel.add(submitButton);
         controlPanel.add(cancelButton);
+        // problem a
+        problemA.add(oneAButton);
+        problemA.add(twoAButton);
+        problemA.add(threeAButton);
+        problemA.add(fourAButton);
+        problemA.add(fiveAButton);
 
         mainFrame.setVisible(true);
+        secondFrame.setVisible(true);
+        problemA.setVisible(true);
     }
 
     @Override
