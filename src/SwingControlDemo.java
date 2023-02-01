@@ -39,20 +39,43 @@ public class SwingControlDemo implements ActionListener {
 
     public SwingControlDemo() {
       //  prepareGUI();
-        prepareGUI2();
-    //   prepareGUI3();
+        //prepareGUI2();
+      prepareGUI3();
     }
 
     public static void main(String[] args) {
         SwingControlDemo swingControlDemo = new SwingControlDemo();
      //   swingControlDemo.showEventDemo();
-        swingControlDemo.showEventDemo2();
-     //   swingControlDemo.showEventDemo3();
+        //swingControlDemo.showEventDemo2();
+        swingControlDemo.showEventDemo3();
     }
     private void prepareGUI3(){
 // put grid on panel and panel in center
+        problemC=new JFrame("problem C");
+        problemC.setSize(Wc,Hc);
+        problemC.setLayout(new BorderLayout());
+        problemC.setVisible(true);
     }
     private void showEventDemo3(){
+        JPanel centerC = new JPanel();
+        centerC.setLayout(new GridLayout(2,3));
+        JButton oneCButton = new JButton("1");
+        JButton twoCButton = new JButton("2");
+        JButton threeCButton = new JButton("3");
+        JButton fourCButton = new JButton("4");
+        JButton fiveCButton = new JButton("5");
+        JLabel oneCLabel = new JLabel("label 1");
+        JLabel twoCLabel = new JLabel("label 2");
+
+        centerC.add(oneCButton);
+        centerC.add(oneCLabel);
+        centerC.add(twoCButton);
+        centerC.add(twoCLabel);
+        centerC.add(threeCButton);
+        problemC.add(fourCButton,BorderLayout.NORTH);
+        problemC.add(fiveCButton,BorderLayout.SOUTH);
+        problemC.add(centerC, BorderLayout.CENTER);
+        problemC.setVisible(true);
 
     }
 
