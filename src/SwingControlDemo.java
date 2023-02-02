@@ -69,14 +69,25 @@ public class SwingControlDemo implements ActionListener {
         JPanel centerD= new JPanel();
         centerD.setLayout(new BorderLayout());
         JLabel oneDlabel= new JLabel("label 1");
-       // JButton center
-        // JButton buttons
+       JButton sevenCDButton= new JButton("SEVEN");
+        JButton eightCDButton= new JButton("EIGHT");
+        centerD.add(oneDlabel, BorderLayout.WEST);
+        centerD.add(sevenCDButton, BorderLayout.SOUTH);
+        centerD.add(eightCDButton, BorderLayout.EAST);
         JButton fiveDButton= new JButton("five");
         JButton sixDButton= new JButton("six");
         JButton sevenDButton= new JButton("seven");
         JButton eightDButton= new JButton("eight");
 
-
+        problemD.add(oneDButton);
+        problemD.add(twoDButton);
+        problemD.add(threeDButton);
+        problemD.add(fourDButton);
+        problemD.add(centerD);
+        problemD.add(fiveDButton);
+        problemD.add(sixDButton);
+        problemD.add(sevenDButton);
+        problemD.add(eightDButton);
         problemD.setVisible(true);
     }
     private void prepareGUI3(){
