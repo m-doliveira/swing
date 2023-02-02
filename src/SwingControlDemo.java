@@ -39,13 +39,18 @@ public class SwingControlDemo implements ActionListener {
     private JFrame problemD;
     private int Wd=500;
     private int Hd=300;
+    //problem e
+    private JFrame problemE;
+    private int We=500;
+    private int He=300;
 
 
     public SwingControlDemo() {
       //  prepareGUI();
       // prepareGUI2();
       //prepareGUI3();
-      prepareGUI4();
+      //prepareGUI4();
+      prepareGUI5();
     }
 
     public static void main(String[] args) {
@@ -53,7 +58,43 @@ public class SwingControlDemo implements ActionListener {
      //   swingControlDemo.showEventDemo();
         //swingControlDemo.showEventDemo2();
        // swingControlDemo.showEventDemo3();
-        swingControlDemo.showEventDemo4();
+        //swingControlDemo.showEventDemo4();
+        swingControlDemo.showEventDemo5();
+    }
+    private void prepareGUI5(){
+            problemE=new JFrame("problem E");
+            problemE.setSize(We,He);
+            problemE.setLayout(new GridLayout(1,2));
+            problemE.setVisible(true);
+    }
+    private void showEventDemo5(){
+        JPanel eLeft = new JPanel();
+        eLeft.setLayout(new GridLayout(3,3));
+        JPanel eRight = new JPanel();
+        eRight.setLayout(new GridLayout(2,1));
+        JLabel eZero= new JLabel("zero");
+        JLabel eZeroA= new JLabel("zero");
+        JLabel eZeroB= new JLabel("zero");
+        JLabel eZeroC= new JLabel("zero");
+        JLabel eZeroD= new JLabel("zero");
+        JButton eOne= new JButton("one");
+        JButton eTwo= new JButton("two");
+        JButton eThree= new JButton("three");
+        JButton eFour= new JButton("four");
+        JButton eTopRight=new JButton("top right");
+        eLeft.add(eOne);
+        eLeft.add(eZeroA);
+        eLeft.add(eTwo);
+        eLeft.add(eZeroB);
+        eLeft.add(eThree);
+        eLeft.add(eZeroC);
+        eLeft.add(eFour);
+        eLeft.add(eZeroD);
+        eRight.add(eTopRight);
+        eRight.add(eOne);
+        problemE.add(eLeft);
+        problemE.add(eRight);
+        problemE.setVisible(true);
     }
     private void prepareGUI4(){
         problemD=new JFrame("problem D");
